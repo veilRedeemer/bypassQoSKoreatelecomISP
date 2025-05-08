@@ -1,5 +1,8 @@
 # bypassQoSKoreatelecomISP
+KT QoS 속도제한 해제 팁
 KT GiGA 인터넷의 일일 150GB QoS제한 우회 팁
+KT 인터넷 베이직
+KT 인터넷 에센스
 
 Glacier/backblaze 백업, 스팀/Steam/에픽스토어/Epic Store 게임 다운로드와 같이 일정한 대역폭을 계속 유지해야 하는 경우 KT 기가 인터넷의 일일 150GB QoS 제한이 방해될 수 있는데요, 아래 방법으로 우회해봅시다
 
