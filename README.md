@@ -28,6 +28,15 @@ KT GiGA WiFi (통신사 공유기) - 제한에서 벗어날 각 기기(이중 NA
 
 동일한 GiGA WiFi에 대해 각 기기마다 다른 IP주소를 설정하세요, 172.30.1.149부터 172.30.1.252까지가 사용 가능한 범위입니다.
 
+아래 표를 확인하여 현재 사용중인 모델에서 사용 가능여부(추측 포함)를 확인하세요:
+
+|＼|KM15-103H 또는 머큐리|DV02-012H 또는 다보링크|HR08-407H 또는 H1Radio|
+|:---------|:--------|:---------|:--------|
+|수동IP설정|〇|〇|〇|
+|수동 IP 할당 설정|〇|〇|✕|
+|업그레이드,TR069 차단|〇|✕|〇|
+
+
 ~~ *수동 IP 설정(GiGA WiFi의 사용자 설정 페이지에서 설정한 경우 제외)은 다른 WiFi 연결 또는 다른 공유기와 연결 시 네트워크/인터넷에 연결할 수 없으므로 이 때 해당 설정을 원래대로(자동/DHCP) 되돌리세요. 각 기기마다 설정 방법이 다를 수 있습니다.
 
 ![W10manualIP_0](https://github.com/user-attachments/assets/77e57272-64f5-4cae-bf86-23bc7e9bcff2)
@@ -39,9 +48,9 @@ http://172.30.1.254:8899 , 구성되지 않은 경우 ID는 ktuser , 비번은 m
 
 장치설정 - 네트워크 관리 - LAN 연결 설정
 
-<img width="494" alt="StaticLeasePremiumIP_KTGiGAWiFi" src="https://github.com/user-attachments/assets/caf3ebd7-bce2-4f86-aa11-6e5c32e6a920" />
+![StaticLeasePremiumIP_KTGiGAWiFi](https://github.com/user-attachments/assets/9d7bda7f-f1a5-4663-8435-f91347cf6cbf)
 
-GiGA WiFi의 사용자 설정 페이지에서 '수동 IP 할당 설정'을 필요에 따라 완료하세요. 당연히 이 경우 각 기기가 '자동(DHCP)'로 구성된 경우에만 위의 설정이 적용됩니다.
+GiGA WiFi의 사용자 설정 페이지에서 '수동 IP 할당 설정'(H1Radio 미지원)을 필요에 따라 완료하세요. 당연히 이 경우 각 기기가 '자동(DHCP)'로 구성된 경우에만 위의 설정이 적용됩니다.
 
 분기 끝
 
@@ -52,9 +61,11 @@ GiGA WiFi의 사용자 설정 페이지에서 '수동 IP 할당 설정'을 필�
 
 마무리로서, 해당 방법의 사용을 저지하려는 시도 중 일부를 방지하기 위해 GiGA WiFi의 자동 펌웨어 업그레이드와 TR-069 통신을 차단합시다
 
+단, 다보링크 기기는 제외
+
 먼저 허용 규칙부터 추가해야 GiGA WiFi에 연결된 IPTV 등의 기기에서의 오작동을 방지할 수 있습니다.
 
-4개의 규칙을 모두 추가한 후, 허용 규칙이 차단 규칙보다 밑에 있으면 됩니다.
+4개의 규칙을 모두 추가한 후, 허용 규칙이 차단 규칙보다 밑에(머큐리) 또는 위에(H1Radio) 있으면 됩니다.
 
 <img width="497" alt="FWUpgradeBlocking_2" src="https://github.com/user-attachments/assets/05a0f3bb-f7c1-4724-9ba3-203dc0093c36" />
 
