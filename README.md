@@ -69,7 +69,8 @@ KT GiGA WiFi와 연결된 기기에서 http://172.30.1.254:8899 , 구성되지 �
 
 ![StaticLeasePremiumIP_KTGiGAWiFi](https://github.com/user-attachments/assets/9d7bda7f-f1a5-4663-8435-f91347cf6cbf)
 
-GiGA WiFi의 사용자 설정 페이지에서 '수동 IP 할당 설정'(H1Radio 미지원)을 필요에 따라 완료하세요. 당연히 이 경우 각 기기가 '자동(DHCP)'로 구성된 경우에만 위의 설정이 적용됩니다.
+GiGA WiFi의 사용자 설정 페이지에서 '수동 IP 할당 설정'(H1Radio 미지원)을 필요에 따라 완료하세요. 당연히 이 경우 각 기기가 '자동(DHCP)'로 구성된 경우에만 위의 설정이 적용되며,
+__변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되므로 KT GiGA WiFi를 재시동하거나 각 기기의 네트워크 연결을 끊었다가 다시 연결해야 할 수 있습니다.__
 
 분기 끝
 
