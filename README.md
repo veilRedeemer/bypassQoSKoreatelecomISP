@@ -43,6 +43,8 @@ IPTV 서비스에 가입되어 있지 않을 경우 프리미엄 IP를 할당받
 |:---------|:--|:--|:--|
 |KM06-506H, KM06-704H,<br>DW02-412H|？|✕|？|
 |KM08-708H, DV01-901H,<br>TI04-708H Wave2|？|？|？|
+|KM12-007H<br>GiGA WiFi home ax|？|？|？|
+|KM17-305H<br>GiGA WiFi home ax|？|？|？|
 |KM15-103H<br>GiGA WiFi home ax|〇|〇|〇|
 |DV02-012H<br>GiGA WiFi home ax|〇|〇|✕|
 |HR08-407H<br>GiGA WiFi home ax|〇|✕|〇|
