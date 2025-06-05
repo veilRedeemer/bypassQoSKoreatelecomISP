@@ -47,6 +47,8 @@ IPTV 서비스에 가입되어 있지 않을 경우 프리미엄 IP를 할당받
 |DV02-012H<br>GiGA WiFi home ax|〇|〇|✕|
 |HR08-407H<br>GiGA WiFi home ax|〇|✕|〇|
 |AR06-012H<br>GiGA WiFi home ax|〇|？|？|
+|KM18-311H<br>KT WiFi 6D|？|？|？|
+|KB01-411H<br>KT WiFi 7D|？|？|？|
 
 __표에서 확인할 수 없는 모델의 각 기능 사용 가능여부를 여러분의 제보(Issues, 메일주소 3570kgen@naver.com , 기여자에 대한 기록을 남기고 싶을경우 Pull Request 등)를 통해 보충할 수 있게 해주세요!__
 
