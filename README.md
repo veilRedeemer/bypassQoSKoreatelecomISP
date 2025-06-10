@@ -31,7 +31,7 @@ ASUSWRT(아수스 공유기, 이중 NAT 구성에서 사용할 수 없음) - htt
 
 클래스 식별자 (Option 60)를 KT_PR_HH_A_A 로 입력 후 적용:
 https://www.asus.com/kr/support/faq/1011715/
-![asuswrt](https://github.com/user-attachments/assets/1dd991c0-67c9-41f3-ad7b-2b6197f0f0fb)
+![asuswrt2](https://github.com/user-attachments/assets/6a57aa42-139f-4f5a-8382-334524ae5c10)
 
 --------------------------------
 ​
