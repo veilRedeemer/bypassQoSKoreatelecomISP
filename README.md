@@ -139,6 +139,8 @@ iptime(테스트중)
 2번 과정에서 iptime에 내장된 wget이 HTTPS 연결을 지원하지 않는 경우, <a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc</a>의 바이너리를 /tmp에 복사할 방법은 각자 준비하세요.
 또한, 필요한 바이너리는 사용중인 모델별로 다릅니다
 
+링크를 직접 클릭하지 말고 로그인한 관리자 페이지의 주소 칸에 붙여넣으세요
+
 1. 적용하려는 기기는 '악성 스크립트 접근 방지(CSRF)'기능이 꺼져 있으며, '원격 지원'기능이 켜져 있어야 합니다. 또한 모델별로 다운로드받아야 할 udhcpc 파일명이 다를 수 있습니다
 2. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20https%3a%2f%2fgithub.com%2fveilRedeemer%2fudhcp%2freleases%2fdownload%2f0.9.9-pre%2fudhcpc_aarch64.gz
 3. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=gzip%20-d%20%2ftmp%2fdhclient.gz
