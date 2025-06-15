@@ -172,7 +172,15 @@ mipsel로 예상되는 기기 : AX2004M, AX2004, AX2002-Mesh, A9004M-X2, A8004T,
 3. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=gzip%20-d%20%2ftmp%2fdhclient.gz
 4. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=chmod%20755%20%2ftmp%2fdhclient
 5. <a href="http://192.168.0.1/ui/wan">인터넷 설정 정보(클릭 가능한 링크)</a>에서 '연결해제'를 선택합니다
-6. http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth1%20-p%20%2fvar%2frun%2fdhclient.eth1%20-V%20KT_PR_HH_A_A
+6. 기기별로 적합한 링크가 다를 수 있습니다. 하나 선택하세요:
+
+   http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth1%20-p%20%2fvar%2frun%2fdhclient.eth1%20-V%20KT_PR_HH_A_A
+   
+   http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth2%20-p%20%2fvar%2frun%2fdhclient.eth2%20-V%20KT_PR_HH_A_A
+   
+   http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth3%20-p%20%2fvar%2frun%2fdhclient.eth3%20-V%20KT_PR_HH_A_A
+   
+   http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=%2ftmp%2fdhclient%20-s%20%2fsbin%2fdhcpc.sh%20-i%20eth4%20-p%20%2fvar%2frun%2fdhclient.eth4%20-V%20KT_PR_HH_A_A
 7. 아래와 같이 표시되면 성공입니다. 다운로드한 데이터를 포함한 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다:
 
 <img width="380" alt="iptime_success" src="https://github.com/user-attachments/assets/799293cb-8e25-403c-b4a3-1b660e7b50b6" />
