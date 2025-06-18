@@ -50,7 +50,7 @@ in
   then
     cpu='mipsel'
   else
-    error_exit "미지원 CPU: $cpu"
+    cpu='mips'
   fi
   ;;
 (*)
