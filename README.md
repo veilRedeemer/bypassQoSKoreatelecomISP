@@ -151,9 +151,7 @@ http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dap
 3. 아래와 같이 표시되면 성공. 다운로드한 데이터를 포함한 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다:
 <img width="333" alt="iptime2" src="https://github.com/user-attachments/assets/fa6ee8d4-9990-4f80-8d70-8ad551737b36" />
 
-성공적으로 프리미엄 IP를 취득했다면 기기 모델명과 펌웨어 버전, 미러 다운로드 주소 사용여부를 3570kgen@naver.com 에 제보하는 것을 고려해보세요.
-
-<a href="https://product.kt.com/wDic/productDetail.do?ItemCode=1401">따라하는 과정에서 발생하는 어려움은 대부분 여기에서 해결할 수 있습니다</a>
+성공적으로 프리미엄 IP를 취득했거나 실패했다면 기기 모델명과 펌웨어 버전, 미러 다운로드 주소 사용여부, 실패 시 출력되는 메세지를 3570kgen@naver.com 에 제보하는 것을 고려해보세요.
 
 --------------------------------
 
