@@ -1,5 +1,5 @@
 #!/bin/sh
-
+vendorclass="KT_PR_HH_A_A"
 error_exit() {
   echo "$1" 1>&2
 
@@ -67,6 +67,9 @@ for ip in $ips; do
 	  :
 	elif cidr_contains "$ip" "10.0.0.0/8"; then
 	  :
+   	elif cidr_contains "$ip" "172.30.1.0/24"; then
+    	  vendorclass="KT_PR_ST_A_A"
+    	  is_private=2
 	elif cidr_contains "$ip" "172.16.0.0/12"; then
 	  :
 	elif cidr_contains "$ip" "100.64.0.0/10"; then
@@ -99,13 +102,15 @@ chmod 755 /tmp/dhclient
 # Check the Global IP availability
 if [[ "$is_private" -eq 1 ]]; then
   error_exit "공인 IP를 감지하지 못했으므로 실패"
+elif [[ "$is_private" -eq 2 ]]; then
+  echo "KT GiGA WiFi 또는 홈허브로부터 인터넷 연결을 제공받는 환경으로 추정됨"
 else
   echo "공인 IP가 확인됨"
 fi
 
 service network/interface/wan1/suspend || service network/interface/wan2/suspend || service network/interface/wan3/suspend || error_exit "DHCP 클라이언트를 중지할 인터페이스를 찾지 못함"
 
-/tmp/dhclient -s /sbin/dhcpc.sh -i $iface -p /var/run/dhclient.$iface -V KT_PR_HH_A_A
+/tmp/dhclient -s /sbin/dhcpc.sh -i $iface -p /var/run/dhclient.$iface -V $vendorclass
 
 newips=`ip a | sed -n 's/.*inet\W*\([0-9\.]*\).*/\1/p'`
 if [ "$ips" = "$newips" ]; then
