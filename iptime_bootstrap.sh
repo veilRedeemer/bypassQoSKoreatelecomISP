@@ -95,7 +95,7 @@ if echo "$iface" | grep -q '[\W]'; then
   error_exit "여러 개의 WAN 인터페이스로 인해 실패: $iface"
 fi
 
-wget -O /tmp/dhclient.gz $url || error_exit "다운로드에 실패"
+wget -O /tmp/dhclient.gz $url || curl -Lo /tmp/dhclient.gz $url || error_exit "다운로드에 실패"
 gzip -d /tmp/dhclient.gz
 chmod 755 /tmp/dhclient
 
