@@ -91,7 +91,7 @@ done
 
 url="https://github.com/veilRedeemer/udhcp/releases/download/0.9.9-pre/udhcpc_${cpu}.gz"
 iface=`ls /var/run | sed -n 's/.*dhclient\.\([a-z0-9]*\).*/\1/p'`
-if echo "$iface" | grep -q '[\W]'; then
+if echo "$iface" | grep -q "[[:space:]]"; then
   error_exit "여러 개의 WAN 인터페이스로 인해 실패: $iface"
 fi
 
