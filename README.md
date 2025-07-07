@@ -119,6 +119,14 @@ __변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되�
 
 --------------------------------
 
+Ubiquiti (예시로서 UniFi Express) - 대시보드에서 톱니바퀴 아이콘 - Internet - KT GiGA 인터넷 연결을 제공하는 WAN 포트 - DHCP Client Options에 Option은 60,  값은 'KT_PR_HH_A_A'로 설정 후 추가 & 적용합니다.
+
+![unifi_dash](https://github.com/user-attachments/assets/29798e32-afff-46b8-947c-de5e18884d7e)
+
+![unifi_dash2](https://github.com/user-attachments/assets/1fcfa5db-a9f4-46b2-9b9d-dfe1fbfa8811)
+
+--------------------------------
+
 OpenWrt - 
 
 https://archive.md/VRZIO
