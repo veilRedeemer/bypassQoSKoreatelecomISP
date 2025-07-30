@@ -34,13 +34,13 @@ KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기�
 |KM06-506H, KM06-704H|？|✕|？|
 |DW02-412H|？|✕|✕|
 |KM08-708H, DV01-901H<br>Wave2|？|？|？|
-|TI04-708H Wave2|〇|？|✕|
+|TI04-708H Wave2|〇|✕|✕|
 |KM12-007H<br>GiGA WiFi home ax|？|？|？|
 |KM17-305H<br>GiGA WiFi home ax|〇|〇|？|
 |KM15-103H<br>GiGA WiFi home ax|〇|〇|〇|
 |DV02-012H<br>GiGA WiFi home ax|〇|〇|✕|
 |HR08-407H<br>GiGA WiFi home ax|〇|✕|〇|
-|AR06-012H<br>GiGA WiFi home ax|〇|？|✕|
+|AR06-012H<br>GiGA WiFi home ax|〇|✕|✕|
 |KM18-311H<br>KT WiFi 6D|？|？|？|
 |KB01-411H<br>KT WiFi 7D|？|？|？|
 
