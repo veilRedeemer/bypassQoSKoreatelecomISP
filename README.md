@@ -1,7 +1,7 @@
 # bypassQoSKoreatelecomISP
 인터넷 속도제한 qos 풀기 해제 기가인터넷 KT GiGA 인터넷의 일일 150GB QoS제한 우회 팁
 
-Glacier/backblaze 백업, 스팀/Steam/에픽스토어/Epic Store 게임 다운로드와 같이 KT 기가 인터넷의 일일 150GB QoS 트래픽 제한(베이직, 에센스 요금제 기준)을 우회하기 위해, 프리미엄 IP(주로 KT의 IPTV 서비스를 제공하기 위해 사용됨, 일일 트래픽 제한 없음)를 취득하는 방법에 대해 톺아보기
+Glacier/backblaze 백업, 스팀/Steam/에픽스토어/Epic Store 게임 다운로드와 같이 짧은 시간 내에 대용량의 인터넷 트래픽 송수신이 필요한 시나리오에서 KT 기가 인터넷의 일일 150GB QoS 트래픽 제한(베이직, 에센스 요금제 기준)을 우회하기 위해, 프리미엄 IP(주로 KT의 IPTV 서비스를 제공하기 위해 사용됨, 일일 트래픽 제한 없음)를 취득하는 방법에 대해 톺아보기
 
 > [!IMPORTANT]
 > __잠깐!__ 그 전에, __이 글은 당신에게 문해력과 NCS 문제해결능력을 요구합니다__<br> <a href="https://literacy.ebs.co.kr/">글을 읽고 이해하는 능력을 기르기 위한 특설 웹사이트와</a>, <a href="https://m.ncs.go.kr/th03/TH0302List.do?dirSeq=123">문제 상황에 대처하는 능력을 기르기 위한 특설 웹사이트</a>를 방문하여 설명을 읽고 올바르게 이해하며, 실제 적용 시 발생할 수 있는 문제에 대한 최소한의 대처능력을 가지고 있는지 스스로 검증해봅시다.
@@ -9,7 +9,7 @@ Glacier/backblaze 백업, 스팀/Steam/에픽스토어/Epic Store 게임 다운�
 
 
 > [!TIP]
-> **아래의 기기별 설정방법은 KT의 인터넷 회선 또는 KT GiGA WiFi로부터 IP를 할당받은 기기만 적용할 수 있으므로 여러 대의 Router를 임의로 설치한 환경에서 어떤 기기가 주 Router인지 명확하게 인지하고 있지 않다면, 거주중인 지역에 홈 네트워크 컨설팅이 가능한 출장 서비스[^1]를 신청하세요**
+> **아래의 기기별 설정방법은 KT의 인터넷 회선 또는 KT GiGA WiFi로부터 IP를 할당받은 기기만 적용할 수 있으므로 여러 대의 Router를 임의로 설치한 환경 또는 이중 NAT 구성에서 어떤 기기가 주 Router인지 명확하게 인지하고 있지 않다면, 거주중인 지역에 홈 네트워크 컨설팅이 가능한 출장 서비스[^1]를 신청하세요**
 
 
 KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기업용 브랜드 지원
@@ -18,7 +18,7 @@ KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기�
 
 그 외 기기는 지원 기기의 LAN포트와 미지원 기기의 WAN 포트를 연결하고, 지원 기기별 설정을 완료하세요. 
 
-예시 - KT GiGA WiFi/ASUSWRT의 컴퓨터/LAN 포트와 미지원 Router의 WAN/인터넷 포트를 연결한 경우, **AP\/허브\/브릿지 모드 등으로 변경한 경우 Router로서 기능하지 않으므로 제외**
+예시 - KT GiGA WiFi/ASUSWRT의 컴퓨터/LAN 포트와 미지원 Router의 WAN/인터넷 포트를 연결한 경우. 단, **AP\/허브\/브릿지 모드 등으로 변경한 경우 Router로서 기능하지 않으므로 제외**
 
 ​또한 적용 후 프리미엄 IP 대역은 원래 일반적인 컴퓨터/스마트 기기로부터의 트래픽이 거의 없었던 특성 상 몇몇 사이트에서 VPN 환경과 같이 Captcha 등을 요구하거나, 지연되거나, 액세스를 거부당할 가능성이 약간 높아집니다.
 
@@ -33,14 +33,16 @@ KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기�
 
 |＼|수동IP설정|수동 IP 할당 설정|업그레이드,TR069 차단|
 |---------:|:--|:--|:--|
-|KM06-506H, KM06-704H,<br>DW02-412H|？|✕|？|
-|KM08-708H, DV01-901H,<br>TI04-708H Wave2|？|？|？|
+|KM06-506H, KM06-704H|？|✕|？|
+|DW02-412H|？|✕|✕|
+|KM08-708H, DV01-901H<br>Wave2|？|？|？|
+|TI04-708H Wave2|〇|？|✕|
 |KM12-007H<br>GiGA WiFi home ax|？|？|？|
 |KM17-305H<br>GiGA WiFi home ax|〇|〇|？|
 |KM15-103H<br>GiGA WiFi home ax|〇|〇|〇|
 |DV02-012H<br>GiGA WiFi home ax|〇|〇|✕|
 |HR08-407H<br>GiGA WiFi home ax|〇|✕|〇|
-|AR06-012H<br>GiGA WiFi home ax|〇|？|？|
+|AR06-012H<br>GiGA WiFi home ax|〇|？|✕|
 |KM18-311H<br>KT WiFi 6D|？|？|？|
 |KB01-411H<br>KT WiFi 7D|？|？|？|
 
@@ -128,7 +130,7 @@ http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dap
 ```
 http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fstart.sh%20https%3a%2f%2fraw.githubusercontent.com%2fveilRedeemer%2fbypassQoSKoreatelecomISP%2frefs%2fheads%2fmain%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
 ```
-3. 아래와 같이 표시되면 성공. 다운로드한 데이터를 포함하여 2번 이후의 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다:
+3. 아래와 같이 표시되면 성공. 다운로드한 데이터와 **취득한 프리미엄 IP를 포함**하여 2번 이후의 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다:
 <img width="333" alt="iptime2" src="https://github.com/user-attachments/assets/fa6ee8d4-9990-4f80-8d70-8ad551737b36" />
 
 VPN 클라이언트(WireGuard 제외)를 구성한 경우 '여러 개의 WAN 인터페이스로 인해 실패'메시지가 표시되면 해당 오류를 발생시키는 프로파일을 제거한 후 다시 시도해봅시다
@@ -143,4 +145,4 @@ VPN 클라이언트(WireGuard 제외)를 구성한 경우 '여러 개의 WAN 인
 ## OpenWrt 
 https://archive.md/VRZIO
 
-[^1]: 컴가게
+[^1]: 동네 컴퓨터 수리점 등
