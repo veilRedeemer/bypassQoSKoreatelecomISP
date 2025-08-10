@@ -12,7 +12,7 @@ Glacier/backblaze 백업, 스팀/Steam/에픽스토어/Epic Store 게임 다운�
 > **아래의 기기별 설정방법은 KT의 인터넷 회선 또는 KT GiGA WiFi로부터 IP를 할당받은 기기만 적용할 수 있으므로 여러 대의 Router를 임의로 설치한 환경 또는 이중 NAT 구성에서 어떤 기기가 주 Router인지 명확하게 인지하고 있지 않다면, 거주중인 지역에 홈 네트워크 컨설팅이 가능한 출장 서비스[^1]를 신청하세요**
 
 
-KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기업용 브랜드 지원
+KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기업용 브랜드 지원<br><a href="https://github.com/KRFOSS/bypassQoSKoreatelecomISP">TP-LINK Omada, OPNsense, MikroTik에 대한 설정방법은 KRFOSS에서 제공됩니다.</a>
 
 <a href="https://github.com/veilRedeemer/bypassQoSKoreatelecomISP/issues/1">샤오미/레드미</a>
 
