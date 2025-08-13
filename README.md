@@ -12,7 +12,7 @@ Glacier/backblaze 백업, 스팀/Steam/에픽스토어/Epic Store 게임 다운�
 > **아래의 기기별 설정방법은 KT의 인터넷 회선 또는 KT GiGA WiFi로부터 IP를 할당받은 기기만 적용할 수 있으므로 여러 대의 Router를 임의로 설치한 환경 또는 이중 NAT 구성에서 어떤 기기가 주 Router인지 명확하게 인지하고 있지 않다면, 거주중인 지역에 홈 네트워크 컨설팅이 가능한 출장 서비스[^1]를 신청하세요**
 
 
-KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기업용 브랜드 지원<br><a href="https://github.com/KRFOSS/bypassQoSKoreatelecomISP">TP-LINK Omada, OPNsense, MikroTik에 대한 설정방법은 KRFOSS에서 제공됩니다.</a>
+KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기업용 브랜드 지원<br><a href="https://github.com/KRFOSS/bypassQoSKoreatelecomISP">TP-LINK Omada, OPNsense, MikroTik에 대한 설정방법은 ROKFOSS에서 제공됩니다.</a>
 
 <a href="https://github.com/veilRedeemer/bypassQoSKoreatelecomISP/issues/1">샤오미/레드미</a>
 
@@ -111,7 +111,7 @@ KT GiGA WiFi와 연결된 기기에서 http://172.30.1.254:8899 , 구성되지 �
 __변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되므로 KT GiGA WiFi를 재시동하거나 각 기기의 네트워크 연결을 끊었다가 다시 연결해야 할 수 있습니다.__
 ## iptime
 백도어 출처 - https://github.com/tylzars/iptime-debug - 펌웨어 버전 15.10.0, ipTIME A2004S에서 동작 확인됨
-
+<br>알려진 문제 - BE3600M/BE5100M 등 일부 기기를 지원하지 않는 문제가 확인되어 미러 링크에서 먼저 해당 문제를 수정하였으며, 곧 원본 링크에도 제공될 예정입니다
 위 출처와 같이 iptime 공유기의 '원격 지원'기능에 잠재된 백도어에 접근할 방법이 있는 경우에만 유효합니다
 
 <a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc 출처</a>
