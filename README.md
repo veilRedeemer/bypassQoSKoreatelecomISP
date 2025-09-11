@@ -32,7 +32,7 @@ KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기�
 |＼|수동IP설정|수동 IP 할당 설정|업그레이드,TR069 차단|
 |---------:|:--|:--|:--|
 |KM06-506H, KM06-704H|？|✕|？|
-|DW02-412H|？|✕|✕|
+|DW02-412H|〇|✕|✕|
 |KM08-708H, DV01-901H<br>Wave2|？|？|？|
 |TI04-708H Wave2|〇|✕|✕|
 |KM12-007H<br>GiGA WiFi home ax|？|？|？|
@@ -112,7 +112,7 @@ __변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되�
 ## iptime
 백도어 출처 - https://github.com/tylzars/iptime-debug - 펌웨어 버전 15.10.0, ipTIME A2004S에서 동작 확인됨<br>
 > [!NOTE]
-> BE3600M/BE5100M 등 일부 기기를 지원하지 않는 문제가 확인되어 미러 링크에서 먼저 해당 문제를 수정하였으며, 곧 원본 링크에도 제공될 예정입니다.<br>
+> BE3600M/BE5100M 등 AN7563PT 탑재 기기를 지원하지 않는 문제가 확인되어 미러 링크에서 먼저 해당 문제를 수정하였으며, 곧 원본 링크에도 제공될 예정입니다.<br>
 > 위 출처와 같이 iptime 공유기의 '원격 지원'기능에 잠재된 백도어에 접근할 방법이 있는 경우에만 유효합니다
 
 <a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc 출처</a>
