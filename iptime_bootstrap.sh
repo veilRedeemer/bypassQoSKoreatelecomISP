@@ -90,9 +90,13 @@ for ip in $ips; do
 done
 
 url="https://github.com/veilRedeemer/udhcp/releases/download/0.9.9-pre/udhcpc_${cpu}.gz"
-iface=`ls /var/run | sed -n 's/.*dhclient\.\([a-z0-9]*\).*/\1/p'`
+iface=`ls /var/run | sed -n 's/.*dhclient\.\([a-z0-9\-]*\).*/\1/p'`
 if echo $iface | grep -q "[[:space:]]"; then
   error_exit "여러 개의 WAN 인터페이스로 인해 실패: $iface"
+fi
+if [ -e "/tmp/dhclient" ]; then
+  reboot
+  error_exit "이미 적용되었으므로 공유기를 재시동하겠습니다."
 fi
 
 wget -O /tmp/dhclient.gz $url || curl -Lo /tmp/dhclient.gz $url || error_exit "다운로드에 실패"
@@ -109,6 +113,12 @@ else
 fi
 
 service network/interface/wan1/suspend || service network/interface/wan2/suspend || service network/interface/wan3/suspend || error_exit "DHCP 클라이언트를 중지할 인터페이스를 찾지 못함"
+
+# inject new mac
+ip link set dev $iface down
+unique=`ip link show dev $iface | sed -n 's/.*\(........\) brd ff:ff:ff:ff:ff:ff$/\1/p'`
+ip link set dev $iface address 88:3c:1c:$unique
+ip link set dev $iface up
 
 /tmp/dhclient -s /sbin/dhcpc.sh -i $iface -p /var/run/dhclient.$iface -V $vendorclass
 
