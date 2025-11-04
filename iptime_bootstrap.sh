@@ -116,13 +116,13 @@ service network/interface/wan1/suspend || service network/interface/wan2/suspend
 
 # inject new mac
 ip link set dev $iface down
-unique=`ip link show dev $iface | sed -n 's/.*\(........\) brd ff:ff:ff:ff:ff:ff$/\1/p'`
+unique=`ip link show dev $iface | sed -n 's/.*\(........\) brd ff:ff:ff:ff:ff:ff.*$/\1/p'`
 ip link set dev $iface address 88:3c:1c:$unique
 ip link set dev $iface up
 
 /tmp/dhclient -s /sbin/dhcpc.sh -i $iface -p /var/run/dhclient.$iface -V $vendorclass
 
-newips=`ip a | sed -n 's/.*inet\W*\([0-9\.]*\).*/\1/p'`
-if [ "$ips" = "$newips" ]; then
-  echo "이미 적용되었거나, 미지원 통신망이거나, Super-DMZ(Twin IP) 구성으로 인해 프리미엄 IP를 요청할 수 없는 환경입니다"
-fi
+#newips=`ip a | sed -n 's/.*inet\W*\([0-9\.]*\).*/\1/p'`
+#if [ "$ips" = "$newips" ]; then
+#  echo "이미 적용되었거나, 미지원 통신망이거나, Super-DMZ(Twin IP) 구성으로 인해 프리미엄 IP를 요청할 수 없는 환경입니다"
+#fi
