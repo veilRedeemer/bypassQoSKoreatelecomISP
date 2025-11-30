@@ -112,7 +112,7 @@ else
   echo "공인 IP가 확인됨"
 fi
 
-service network/interface/wan1/suspend || service network/interface/wan2/suspend || service network/interface/wan3/suspend || error_exit "DHCP 클라이언트를 중지할 인터페이스를 찾지 못함"
+service network/interface/wan1/suspend || service network/interface/wan2/suspend || service network/interface/wan3/suspend || error_exit "DHCP 클라이언트를 중지할 인터페이스를 찾지 못했거나, 지원하는(15.x.x) 버전의 펌웨어가 아닙니다"
 
 # inject new mac
 ip link set dev $iface down
