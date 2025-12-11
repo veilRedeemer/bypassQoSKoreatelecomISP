@@ -126,3 +126,4 @@ ip link set dev $iface up
 #if [ "$ips" = "$newips" ]; then
 #  echo "이미 적용되었거나, 미지원 통신망이거나, Super-DMZ(Twin IP) 구성으로 인해 프리미엄 IP를 요청할 수 없는 환경입니다"
 #fi
+rm -f /var/run/session.status.httpcon
