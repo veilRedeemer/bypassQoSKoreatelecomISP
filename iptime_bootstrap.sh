@@ -105,7 +105,7 @@ chmod 755 /tmp/dhclient
 
 # Check the Global IP availability
 if [[ "$is_private" -eq 1 ]]; then
-  error_exit "공인 IP를 감지하지 못했으므로 실패"
+  error_exit "WAN포트로부터 공인 IP를 감지하지 못했으므로 실패했습니다. 출장 서비스를 받으세요"
 elif [[ "$is_private" -eq 2 ]]; then
   echo "KT GiGA WiFi 또는 홈허브로부터 인터넷 연결을 제공받는 환경으로 추정됨"
 else
