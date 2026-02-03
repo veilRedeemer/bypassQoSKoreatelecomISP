@@ -37,7 +37,8 @@ KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기�
 |HR08-407H<br>GiGA WiFi home ax|〇|✕|〇|
 |AR06-012H<br>GiGA WiFi home ax|〇|✕|✕|
 |KM18-311H<br>KT WiFi 6D|〇|〇|？|
-|KB01-411H<br>KT WiFi 7D|〇|〇|〇|
+|KB01-411H<br>KT WiFi 7D(버전 1.1.30 이하)|〇|〇|〇|
+|KB01-411H<br>KT WiFi 7D(버전 1.1.30 초과)|？|？|？|
 
 __표에서 확인할 수 없는 모델의 각 기능 사용 가능여부를 여러분의 제보(Issues, 기여자에 대한 기록을 남기고 싶을경우 Pull Request 등)를 통해 보충할 수 있게 해주세요!__
 
